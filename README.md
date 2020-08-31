@@ -5,4 +5,4 @@ Activate the venv typing following commands:
     activate,
 Return to the project directory (e.g: Ecommerce Project) by typing "cd..".
 Change Directory to Ewebsite by typing "cd Ewebsite".
-Now type "pyton manage.py runserver".
+Now type "python manage.py runserver".
