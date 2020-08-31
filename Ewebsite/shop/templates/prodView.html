@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} {{product.product_name}} {% endblock %}
+{% block css %}
+.boxes{
+<!-- border: 2px solid red; -->
+}
+.crate{
+border: 2px solid #e8e8e8;
+height: 78px;
+width: 80px;    
+}
+{% endblock %}
+{% block body %}
+<div class="container my-4" style="height: 74.5vh;">
+    <div class="row" style="flex-wrap: nowrap;">
+        <div class="boxes">
+            <div class="crate" id="box-1" style="border-radius: 10px;">
+            <img src="/media/{{product.image}}" alt="" width="75px" height="74px" style="border-radius: 10px;">
+            </div>
+            <div class="crate" id="box-2" style="border-radius: 10px;">
+                <img src="/media/{{product.image}}" alt="" width="75px" height="74px" style="border-radius: 10px;">
+            </div>
+            <div class="crate" id="box-3" style="border-radius: 10px;">
+                <img src="/media/{{product.image}}" alt="" width="75px" height="74px" style="border-radius: 10px;">
+            </div>
+            <div class="crate" id="box-4" style="border-radius: 10px;">
+                <img src="/media/{{product.image}}" alt="" width="75px" height="74px" style="border-radius: 10px;">
+            </div>
+            <div class="crate" id="box-5" style="border-radius: 10px;">
+                <img src="/media/{{product.image}}" alt="" width="75px" height="74px" style="border-radius: 10px;">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row" id="main-box" style="border: 2px solid #e8e8e8; border-radius: 10px;">
+                <img src="/media/{{product.image}}" width="375px" height="383px" style="border-radius: 10px;">
+            </div>
+            <div class="row">
+                {% comment %} <button class="btn btn-primary mx-3">Buy Now</button>
+                <button class="btn btn-primary">Buy Now</button> {% endcomment %}
+            </div>
+        </div>
+        <div class=col-md-8>
+            <h4>{{product.product_name}}</h4>
+            <h5>{{product.collection_name}}</h5>
+            <p><b>Rs.{{product.price}}</b></p>
+            <p>{{product.desc}} Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur optio fuga asperiores, dolores ipsam sunt quibusdam earum ratione? Qui officiis nesciunt saepe doloremque voluptatum nulla similique architecto ex alias perspiciatis! Aut placeat et cumque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, laudantium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, expedita.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block js %}
+var x = document.getElementsByClassName('crate')
+for(let i = 0; i<x.length; i++){
+    x[i].addEventListener('click', function(){
+        document.getElementById('main-box').innerHTML="<img src='/media/{{product.image}}' width='373px' height='382px'>";
+    })
+}
+{% endblock %}
